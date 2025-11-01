@@ -22,7 +22,7 @@ export async function POST(req: Request) {
 
     // supabaseに保存
     const { error } = await supabaseAdmin
-      .from("subscribes")
+      .from("subscribers")
       .insert([{ email }]);
 
     if (error) {
@@ -53,6 +53,7 @@ export async function POST(req: Request) {
     } else {
       // Errorインスタンスではない、予期せぬエラーの場合
       console.error("Unknown API error:", err);
+      return NextResponse.json({ message: "" }, { status: 500 });
     }
   }
 }

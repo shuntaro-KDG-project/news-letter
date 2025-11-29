@@ -33,7 +33,15 @@ export default async function Subscribers() {
     return <main className="p-8 text-red-500">エラー: {error.message}</main>;
 
   return (
-    <main className="p-8">
+    <main className="p-10">
+      <div className="flex justify-end mb-6">
+        <a
+          href="auth/logout"
+          className="text-purple-600 underline float-right mb1"
+        >
+          ログアウト
+        </a>
+      </div>
       <h1 className="text-xl"></h1>
       <ul className="space-y-2">
         {data?.map((s) => (
